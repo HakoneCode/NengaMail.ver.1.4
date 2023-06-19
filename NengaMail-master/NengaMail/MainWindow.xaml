@@ -1,0 +1,47 @@
+﻿<Window x:Class="NengaMail.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:NengaMail"
+        Title="年賀メール" Height="600" Width="910" Loaded="MainWindow_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border BorderThickness="1" Background="{DynamicResource MaterialDesignFlatButtonRipple}" Grid.Row="0" BorderBrush="Black">
+            <TextBlock Text="年賀メール" FontSize="24" HorizontalAlignment="Center" Foreground="White" />
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="281*"/>
+                <ColumnDefinition Width="39*"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{DynamicResource PrimaryHueLightBrush}" Grid.Column="0">
+                <ListBox x:Name="NavigationListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="NavigationListBox_SelectionChanged" IsSynchronizedWithCurrentItem="True">
+                    <TextBlock FontWeight="Bold" Text="干支" Margin="5"/>
+                    <ListBoxItem Content="ねずみ" Tag="nezumi"/>
+                    <ListBoxItem Content="うし" Tag="ushi"/>
+                    <ListBoxItem Content="とら" Tag="tora"/>
+                    <ListBoxItem Content="うさぎ" Tag="usagi"/>
+                    <ListBoxItem Content="たつ" Tag="tatsu"/>
+                    <ListBoxItem Content="へび" Tag="hebi"/>
+                    <ListBoxItem Content="うま" Tag="uma"/>
+                    <ListBoxItem Content="ひつじ" Tag="hitsuji"/>
+                    <ListBoxItem Content="さる" Tag="saru"/>
+                    <ListBoxItem Content="とり" Tag="tori"/>
+                    <ListBoxItem Content="いぬ" Tag="inu"/>
+                    <ListBoxItem Content="いのしし" Tag="inoshishi"/>
+                    <TextBlock Margin="5"/>
+                    <TextBlock FontWeight="Bold" Text="行事" Margin="5"/>
+                    <ListBoxItem Content="暑中見舞い" Tag="shochuumimai"/>
+                </ListBox>
+            </Border>
+            <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Background="#FFEEE6FC" Navigated="ContentFrame_Navigated"/>
+        </Grid>
+    </Grid>
+</Window>

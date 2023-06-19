@@ -1,0 +1,29 @@
+﻿<Page x:Class="NengaMail.EditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:NengaMail"
+      Title="Edit Page">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Side: Image -->
+        <Image x:Name="SelectedImage" Grid.Column="0" Stretch="Uniform" Source="{Binding ElementName=CheckWindow, Path=SelectedImage.Source, Mode=OneWay}" />
+
+        <!-- Right Side: Fields and Buttons -->
+        <StackPanel Grid.Column="1" Margin="20">
+            <Label Content="メールタイトル"/>
+            <TextBox x:Name="TitleField" />
+            <Label Content="一言コメント"/>
+            <TextBox x:Name="CommentField" AcceptsReturn="True" Height="100" />
+
+            <!-- Buttons: horizontal alignment -->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="BackButton" Content="戻る" Width="100" Margin="0,20,10,0" Click="BackButton_Click"/>
+                <Button x:Name="NextButton" Content="次へ進む" Width="100" Margin="10,20,0,0" Click="NextButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
